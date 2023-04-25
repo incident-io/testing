@@ -32,4 +32,4 @@ jobs:
           echo test, and deploy your project.
           
       - name: Run a script that fails
-        run: false || echo It failed.
+        run: exit 1
