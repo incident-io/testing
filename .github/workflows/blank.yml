@@ -31,3 +31,11 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
         
+      - name: Send a status update
+        uses: Sibz/github-status-action@v1
+        with: 
+          authToken: ${{secrets.GITHUB_TOKEN}}
+          context: 'Test run'
+          description: 'Passed'
+          state: 'success'
+          sha: ${{github.event.pull_request.head.sha || github.sha}}
